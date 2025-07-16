@@ -11,22 +11,25 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
-    { path: '/investors', label: 'Investors' },
     { path: '/dashboard', label: 'Dashboard' },
+    { path: '/investors', label: 'Investors' },
+   
     { path: '/contact', label: 'Contact' }
   ];
 
   return (
     <>
       <AppBar
-        position={'absolute'}
+        position="fixed"
         elevation={0}
         color="transparent"
         sx={{
           backgroundColor: 'transparent',
+          zIndex: (theme) => theme.zIndex.drawer + 1,
           boxShadow: 'none' ,
           px: 4,
-          py: 1
+          py: 1,
+          
         }}
       >
         <Toolbar>

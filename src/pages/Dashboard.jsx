@@ -7,30 +7,51 @@ import {
   Grid,
   Paper,
   Button,
-  Divider
+  Divider,
+  useTheme,
+  Container,
 } from "@mui/material";
 
 import UploadVideo from '../components/UploadVideo';
 import LiveFeed from '../components/LiveFeed';
 
 const Dashboard = () => {
+  const theme = useTheme();
   return (
-    <Box sx={{ p: 4 }}>
-       <Typography variant="h4" textAlign="center" mb={3}>
-        ElderGuard AI – Fall Detection
-      </Typography>
+    <Box >
+       <Box
+        sx={{
+          backgroundImage: `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+          color: "#fff",
+          py: 10,
+          
+          textAlign: "center",
+        }}
+      >
+        <Container maxWidth="md">
+          {/* Header */}
+        
+          <Typography variant="h4" fontWeight="bold" gutterBottom>
+            🧠 ElderGuard AI Dashboard
+          </Typography>
+          <Typography variant="subtitle1">
+            Real-time monitoring, system alerts, and emergency triggers.
+          </Typography>
+        </Container>
+      </Box>
 
-      <Typography variant="subtitle1" color="text.secondary" gutterBottom>
-        Real-time monitoring, system alerts, and emergency triggers.
-      </Typography>
+     <Container>
+      
+        
 
-      <Divider sx={{ my: 3 }} />
+        <UploadVideo></UploadVideo>
+          
+          </Container>
 
      
 
             {/* Placeholder for video feed */}
-            <UploadVideo></UploadVideo>
-          
+           
         {/* Right Panel - Status */}
         {/*<Grid item xs={12} md={6}>
           <Paper elevation={3} sx={{ p: 3 }}>
